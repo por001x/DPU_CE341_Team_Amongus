@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <title>Test Member</title>
+</head>
+
+<body>
+    <div class="container-modal">
+
+        <div class="page">
+            
+            
+            <div class="page__container">
+                <p class="team-name">
+                    COLLEGE OF INNOVATIVE TECHNOLOGY AND ENGINEERING
+                    <span>Team : Amongus</span>
+                    &mdash; COMPUTER ENGINEERING &mdash;
+                </p>
+
+                <a href="#popup-article" onclick="popup_ip()" class="open-popup">IP Address </a>
+                <a href="#popup-article" onclick="popup_picture()" class="open-popup"> Picture  Team </a>
+                <a href="index.html" class="open-popup"> Back </a>
+            </div>
+            
+        </div>
+
+
+        <div id="popup-article" class="popup">
+            <div class="popup__container">
+                <div class="popup__content">
+                    <div class="bnt-close">
+                        <a href="#" class="popup__close">
+                            <span class="screen-reader">close</span>
+                        </a>
+                    </div>
+                    <div class="popup-detail">
+                        <h1 id="popup-title" class="popup__title r-title">Picture My Team </h1>
+                        <div id="ip-address"></div>
+                        <div id="picture">
+
+                            <div class="area-content">
+                                
+                                <div id="dt-content" class="dt-content">
+                                    <img src="img/por.png" alt="por">
+                                </div>
+                                <div id="dt-content" class="dt-content">
+                                    <img src="img/palm.jpg" alt="palm">
+                                </div>
+                                <div id="dt-content" class="dt-content">
+                                    <img src="img/tiaw.jpeg" alt="tiaw">
+                                </div>
+                                <div id="dt-content" class="dt-content">
+                                    <img src="img/rif.png" alt="rif">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <script>
+        function popup_ip() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function requestProcess() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        var data = JSON.parse(this.responseText);
+                        // alert(data.ip);
+                        document.getElementById("popup-title").innerHTML = "You IP Address";
+                        document.getElementById("ip-address").innerHTML = data.ip;
+                        document.getElementById("ip-address").style.display = "block";
+                        document.getElementById("picture").style.display = "none";
+                        
+                    } else {
+                        alert("Error");
+                    }
+                }
+            };
+            xhr.open("GET", "http://ip.jsontest.com/", true);
+            xhr.send();
+        }
+        function popup_picture(){
+            document.getElementById("popup-title").innerHTML = "Picture My Team";
+            document.getElementById("picture").style.display = "block";
+            document.getElementById("ip-address").style.display = "none";
+        }
+        
+    </script>
+</body>
+    
+</html>
