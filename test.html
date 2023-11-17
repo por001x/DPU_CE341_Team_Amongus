@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
-    <title>Test Member</title>
+    <title>Amongus</title>
+
 </head>
 
-<body> 
+<body>
     <div class="container-modal">
 
         <div class="page">
-            
-            
+
+
             <div class="page__container">
                 <p class="team-name">
-                    COLLEGE OF INNOVATIVE TECHNOLOGY AND ENGINEERING 
-                    <span>Team : Amongus</span>
-                    &mdash; COMPUTER ENGINEERING &mdash;
+                    COLLEGE OF INNOVATIVE TECHNOLOGY AND ENGINEERING
+                    <span>Team : Amongus</span> &mdash; COMPUTER ENGINEERING &mdash;
                 </p>
 
                 <a href="#popup-article" onclick="popup_ip()" class="open-popup">IP Address </a>
                 <a href="#popup-article" onclick="popup_picture()" class="open-popup"> Picture  Team </a>
                 <a href="index.html" class="open-popup"> Back </a>
             </div>
-            
+
         </div>
 
 
@@ -43,18 +43,18 @@
                         <div id="picture">
 
                             <div class="area-content">
-                                
+
                                 <div id="dt-content" class="dt-content">
                                     <img src="img/por.png" alt="por">
                                 </div>
                                 <div id="dt-content" class="dt-content">
-                                    <img src="img/palm.jpg" alt="palm">
+                                    <img src="img/palm.png" alt="palm">
                                 </div>
                                 <div id="dt-content" class="dt-content">
                                     <img src="img/tiaw.jpeg" alt="tiaw">
                                 </div>
                                 <div id="dt-content" class="dt-content">
-                                    <img src="img/rif.png" alt="rif">
+                                    <img src="img/rif.jpeg" alt="rif">
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        
+
 
     </div>
 
@@ -79,7 +79,7 @@
                         document.getElementById("ip-address").innerHTML = data.ip;
                         document.getElementById("ip-address").style.display = "block";
                         document.getElementById("picture").style.display = "none";
-                        
+
                     } else {
                         alert("Error");
                         window.location.reload();
@@ -91,13 +91,12 @@
         }
     </script>
     <script>
-        function popup_picture(){
+        function popup_picture() {
             document.getElementById("popup-title").innerHTML = "Picture My Team";
             document.getElementById("picture").style.display = "block";
             document.getElementById("ip-address").style.display = "none";
         }
-        
     </script>
 </body>
-    
+
 </html>
